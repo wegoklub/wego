@@ -1,0 +1,38 @@
+# serverless.yml
+
+service: duo-scraper
+
+variablesResolutionMode: 20210326
+
+frameworkVersion: '^3.0.0'
+
+plugins:
+    - serverless-webpack
+    - serverless-offline
+    - serverless-prune-plugin
+
+custom:
+    serverless-offline:
+        httpPort: 3000
+    webpack:
+        packager: 'yarn'
+    prune:
+        automatic: true
+        includeLayers: true
+        number: 3
+
+provider:
+    name: aws
+    runtime: nodejs18.x
+    memorySize: 512
+    region: eu-west-1
+    lambdaHashingVersion: 20201221
+functions:
+    duo:
+        handler: src/index.handler
+        # environment: ${file('./env.yml')}
+        events:
+            - http:
+                  path: /{proxy+}
+                  method: any
+                  cors: true

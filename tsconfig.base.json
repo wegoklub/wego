@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "incremental": true,
+        "lib": ["ESNext"],
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "paths": {
+            "@wego/*": ["packages/*"]
+        },
+        "removeComments": true,
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "ESNext",
+        "typeRoots": ["./node_modules/@types"],
+        "useUnknownInCatchVariables": false
+    }
+}
