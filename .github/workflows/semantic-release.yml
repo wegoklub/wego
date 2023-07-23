@@ -1,0 +1,24 @@
+name: Semantic release
+
+on:
+    push:
+        branches:
+            - main
+            - preview
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: 18
+            - name: Install dependencies
+              run: yarn
+            - name: Release
+              run: yarn workspaces run semantic-release -e semantic-release-monorepo
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
