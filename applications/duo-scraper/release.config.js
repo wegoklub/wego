@@ -1,6 +1,5 @@
 /* eslint-disable */
 module.exports = {
-    extends: "semantic-release-monorepo",
     branches: ['main', { name: 'preview', prerelease: true }],
     plugins: [
         '@semantic-release/commit-analyzer',
