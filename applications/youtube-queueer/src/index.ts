@@ -45,15 +45,16 @@ type YoutubePubSubPayload = {
     };
 };
 
-app.get<{Querystring: {challenge: string}}>(
-    '/pubsub',
-    async (request, reply) => {
-        return reply
-            .code(200)
-            .headers({'Content-Type': 'application/json'})
-            .send(request.query.challenge);
-    },
-);
+app.get<{
+    Querystring: {
+        'hub.challenge': string;
+        'hub.topic': string;
+        'hub.mode': string;
+        'hub.lease_seconds': string;
+    };
+}>('/pubsub', async (request, reply) => {
+    return reply.code(200).send(request.query['hub.challenge']);
+});
 
 app.post<{Body: YoutubePubSubPayload}>('/pubsub', async (request, reply) => {
     try {
