@@ -28,8 +28,6 @@ app.get('/cani', async (_, reply) => {
         const ch = Cheerio.load(response);
 
         return builder.success({
-            app: 'kanikeenkortebroekaan-scraper',
-            message: 'ok',
             can_i: Boolean(ch('body').attr('class')?.includes('ja')),
             image: `${BASE_URL.substring(0, BASE_URL.length - 1)}${ch(
                 '.main-image',
