@@ -6,9 +6,6 @@
       "applications/*"
     ]
   },
-  "scripts": {
-    "release": "yarn workspaces run semantic-release -e semantic-release-monorepo"
-  },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "9.0.2",
