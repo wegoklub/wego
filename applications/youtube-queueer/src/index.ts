@@ -45,6 +45,16 @@ type YoutubePubSubPayload = {
     };
 };
 
+app.get<{Querystring: {challenge: string}}>(
+    '/pubsub',
+    async (request, reply) => {
+        return reply
+            .code(200)
+            .headers({'Content-Type': 'application/json'})
+            .send(request.query.challenge);
+    },
+);
+
 app.post<{Body: YoutubePubSubPayload}>('/pubsub', async (request, reply) => {
     try {
         const cmd = new SendMessageCommand({
