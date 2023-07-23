@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Scraper for duo.nl",
     "license": "MIT",
+    "private": true,
     "devDependencies": {
         "@types/aws-lambda": "8.10.119",
         "@types/node-fetch": "2.6.4",
