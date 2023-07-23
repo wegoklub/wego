@@ -12,6 +12,9 @@ const app = fastify({
     logger: true,
 });
 
+const valueOrDefault = (num: number, fallback = 0): number =>
+    isNaN(num) ? 0 : fallback;
+
 app.get('/', async (_, reply) => {
     const builder = new ResponseBuilder(reply);
     return builder.success({
@@ -30,12 +33,17 @@ app.get('/stufi', async (_, reply) => {
 
         const days = parseInt(ch('.hint').text().trim().replace(/\D/g, ''));
 
+        console.log({days});
+
         return builder.success({
-            paid_in: days,
+            paid_in: valueOrDefault(days),
             paid_in_unit: 'days',
-            paid_in_date: dayjs().add(days, 'days').toISOString(),
+            paid_in_date: dayjs()
+                .add(valueOrDefault(days), 'days')
+                .toISOString(),
         });
     } catch (err) {
+        console.error(err);
         return builder.error('Unknown error occurred.');
     }
 });
