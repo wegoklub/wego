@@ -18,12 +18,12 @@
         "webpack": "5.88.2"
     },
     "dependencies": {
-        "@aws-sdk/client-sqs": "^3.370.0",
+        "@aws-sdk/client-sqs": "3.370.0",
         "aws-lambda": "1.0.7",
         "aws-serverless-fastify": "3.0.4",
         "cheerio": "1.0.0-rc.12",
         "fastify": "4.20.0",
-        "fastify-xml-body-parser": "^2.2.0",
+        "fastify-xml-body-parser": "https://github.com/wegoklub/fastify-xml-body-parser.git#master",
         "node-fetch": "2.6.4"
     }
 }

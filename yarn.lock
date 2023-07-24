@@ -462,7 +462,7 @@
     fast-xml-parser "4.2.5"
     tslib "^2.5.0"
 
-"@aws-sdk/client-sqs@^3.370.0":
+"@aws-sdk/client-sqs@3.370.0":
   version "3.370.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-sqs/-/client-sqs-3.370.0.tgz#772cff5b035161613aec581ee4149c7eb262d625"
   integrity sha512-HaF+Jb5dKtvv2uA5WhtPMPM4d6vczHGKV1x/CRFJv2NDwHJX6E84RZ+74008SCjdA3C1RqvErrjw0iSwYyN7CA==
@@ -5204,10 +5204,9 @@ fastify-plugin@^3.0.0:
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-3.0.1.tgz#79e84c29f401020f38b524f59f2402103fd21ed2"
   integrity sha512-qKcDXmuZadJqdTm6vlCqioEbyewF60b/0LOFCcYN1B6BIZGlYJumWWOYs70SFYLDAH4YqdE1cxH/RKMG7rFxgA==
 
-fastify-xml-body-parser@^2.2.0:
+"fastify-xml-body-parser@https://github.com/wegoklub/fastify-xml-body-parser.git#master":
   version "2.2.0"
-  resolved "https://registry.yarnpkg.com/fastify-xml-body-parser/-/fastify-xml-body-parser-2.2.0.tgz#c8ed420b26a3a4457be27dac48a9629cebc9fed8"
-  integrity sha512-Jxltec0Iin4QX+DEQoYCyGmU5cTRtI0x22mRT/3FBQMhTEn7KNTHnnEtbyN3+6SLgW8cSirnOe1t8vqn77vR+Q==
+  resolved "https://github.com/wegoklub/fastify-xml-body-parser.git#69a08a072f51725af4068a5e41b1f99e5718be01"
   dependencies:
     fast-xml-parser "^4.1.2"
     fastify-plugin "^3.0.0"
